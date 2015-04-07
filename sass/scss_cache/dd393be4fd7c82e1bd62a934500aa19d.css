@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.9 on Wed, 08 Apr 2015 01:43:43 +0800 (0.2438s) */
+/* compiled by scssphp v0.0.9 on Wed, 08 Apr 2015 02:24:36 +0800 (0.5117s) */
 
 /*
 Theme Name: MollyHooper
@@ -294,7 +294,7 @@ html {
 
 body {
   /* Fallback for when there is no custom background color defined. */
-  background: #fff; }
+  background: #fafafa; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -474,7 +474,7 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
-.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
+.clear:before:after, .clear:after:after, .entry-content:before:after, .entry-content:after:after, .comment-content:before:after, .comment-content:after:after, .site-header:before:after, .site-header:after:after, .site-content:before:after, .site-content:after:after, .site-footer:before:after, .site-footer:after:after {
   content: "";
   display: table; }
 
@@ -499,7 +499,28 @@ body.custom-background {
 ## Posts and pages
 --------------------------------------------------------------*/ }
   .site-header {
-    min-height: 200px; }
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f5f5f5;
+    box-shadow: 0px 1px 2px 0px #333; }
+    .site-header:after {
+      content: "";
+      display: table; }
+    .site-header .wrapper {
+      max-width: 600px;
+      margin: 0px auto;
+      margin-top: 100px;
+      margin-bottom: -100px;
+      background-color: #009688;
+      box-shadow: 1px 1px 5px -2px #333; }
+      .site-header .wrapper:after {
+        content: "";
+        display: table; }
+    .site-header .site-branding {
+      padding: 10px;
+      padding-top: 50px; }
 
 .sticky {
   display: block; }

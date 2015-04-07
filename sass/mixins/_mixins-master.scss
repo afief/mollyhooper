@@ -13,8 +13,10 @@
 
 // Clearfix
 @mixin clearfix() {
+	&:after {
 	content: "";
 	display: table;
+}
 }
 
 // Clear after (not all clearfix need this also)
