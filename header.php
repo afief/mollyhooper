@@ -30,7 +30,6 @@
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'mollyhooper' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>
@@ -42,6 +41,7 @@
 					background-image: url('<?= get_background_image(); ?>');
 				}
 			</style>
+
 		<?php endif; ?>
 
 		<div id="content" class="site-content">

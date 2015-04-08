@@ -14,9 +14,10 @@
 // Clearfix
 @mixin clearfix() {
 	&:after {
-	content: "";
-	display: table;
-}
+		content: " ";
+		display: table;
+		clear: both;
+	}
 }
 
 // Clear after (not all clearfix need this also)

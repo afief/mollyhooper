@@ -26,3 +26,110 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.site-main {
+	width: $size__site-desktop;
+	margin: 0px auto;
+}
+article {
+	background-color: $color__white;
+	box-shadow: 1px 1px 3px -1px $color__boxshadow;
+	a {
+		color: $color__pink;
+		text-decoration: none;
+	}
+	.entry-thumbnail {
+		img {
+			width: 100%;
+		}
+	}
+	.entry-header {
+		padding: 20px;
+		padding-bottom: 0px;
+		h1 {
+			margin: 0px;
+			color: $color__indigo700;
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+		.entry-meta {
+			font-style: italic;
+			font-size: small;
+		}
+	}
+	.entry-content {
+		padding: 20px;
+		margin-top: 0px;
+		p {
+			line-height: 2;
+		}
+		figure {
+			&.alignnone {
+				margin: 0px;
+			}
+			&.alignleft {
+				margin: 10px 20px 10px 0px;
+			}
+			&.alignright {
+				margin: 10px 0px 10px 20px;
+			}
+		}
+		.more-link {
+			display: table;
+			padding: 5px 10px;
+			border-radius: 10px;
+			&:hover {				
+				background-color: $color__pink;
+				color: white;
+			}
+		}
+	}
+	.entry-footer {
+		@include clearfix;
+		background-color: $color__indigo;
+		.cat-links {
+			display: block;
+			float: left;
+			padding: 10px 10px;
+			color: $color__white;
+			a {
+				display: none;
+				&:nth-child(1), &:nth-child(2) {
+					display: initial;
+				}
+				color: inherit;
+				text-decoration: none;
+				&:hover {
+					color: $color__pink;
+				}
+			}
+
+		}		
+		.comments-link, .edit-link {
+			float: right;
+			a {
+				display: block;
+				padding: 10px;
+				color: white;
+				background-color: $color__indigo700;
+				i {
+					line-height: inherit;
+				}
+				&:hover {
+					background-color: $color__indigo;
+				}
+			}
+		}
+	}
+	.page-links {
+		padding: 5px 10px;
+		border-top: solid 1px $color__background-hr;
+		border-bottom: solid 1px $color__background-hr;
+		a {
+			display: inline-block;
+			padding: 5px;
+		}
+	}
+}

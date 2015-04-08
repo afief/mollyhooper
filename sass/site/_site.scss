@@ -1,31 +1,88 @@
 // @import "../layout/content-sidebar";
 // @import "../layout/sidebar-content";
 
+@import url(http://fonts.googleapis.com/css?family=Vollkorn|Roboto);
+
 body.custom-background {
-	background: none !important;
+	background-image: none !important;
 }
 
 .site {
+	font-family: 'Roboto', sans-serif;
 	&-header {
 		@include clearfix;
-		.wrapper {
-			max-width: $size__site-desktop;
-			margin: 0px auto;
-			margin-top: 100px;
-			margin-bottom: -100px;
-			background-color: $color__main-color;
-			box-shadow: 1px 1px 5px -2px #333;
-			@include clearfix;
-		}
 		height: 300px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
-		background-color: $color__header-default;
-		box-shadow: 0px 1px 2px 0px #333;
+		background-color: $color__indigo700;
+		box-shadow: 0px 1px 1px 0px $color__boxshadow;
+		margin-bottom: 100px;
+		.wrapper {
+			max-width: $size__site-desktop;
+			min-height: $size__site-headerheight;
+			margin: 0px auto;
+			margin-top: 100px;
+			margin-bottom: -100px;
+			background-color: $color__indigo;
+			box-shadow: 1px 1px 5px -2px $color__boxshadow;
+			position: relative;
+			@include clearfix;
+		}
 		.site-branding {
-			padding: 10px;
-			padding-top: 50px;
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			.site-title, .site-description {
+				color: $color__white;
+				font-weight: normal;
+				margin: 0px;
+				padding: 0px;
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+			.site-title {
+				font-size: xx-large;
+			}
+			.site-description {
+				font-size: large;
+			}
+		}
+		.main-navigation {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: initial;
+			.menu {
+				display: table;
+				ul {
+					padding: 0px;
+					margin: 0px;
+					li {
+						color: $color__white;
+						padding: 8px 12px;
+						border-radius: 2px;
+						display: block;
+						float: left;
+						font-size: small;
+						&:hover {
+							background-color: $color__pink;
+						}
+						a {
+							color: inherit;
+							text-decoration: none;
+						}
+						&.page_item_has_children {
+							position: relative;
+							ul.children {
+								background-color: $color__indigo700;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

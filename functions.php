@@ -46,7 +46,7 @@ function mollyhooper_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -102,7 +102,7 @@ add_action( 'widgets_init', 'mollyhooper_widgets_init' );
 function mollyhooper_scripts() {
 	//remove this line after compile sass into style.css
 	wp_enqueue_style('mollyhooper-tempstyle',  get_template_directory_uri() . '/style.php/style.scss');
-
+	
 	wp_enqueue_style( 'mollyhooper-genericons', get_template_directory_uri() . '/fonts/genericons/genericons.css');
 
 	wp_enqueue_style( 'mollyhooper-style', get_stylesheet_uri() );

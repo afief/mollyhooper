@@ -5,6 +5,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<div class="entry-thumbnail">
+		<?php
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail();
+		}
+		?>
+	</div>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
@@ -19,7 +28,7 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mollyhooper' ),
+				__( 'Continue Reading', 'mollyhooper' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
