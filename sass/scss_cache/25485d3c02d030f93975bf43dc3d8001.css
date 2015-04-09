@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.9 on Wed, 08 Apr 2015 14:16:29 +0200 (0.1279s) */
+/* compiled by scssphp v0.0.9 on Thu, 09 Apr 2015 12:14:21 +0200 (0.1601s) */
 
 /*
 Theme Name: MollyHooper
@@ -511,6 +511,66 @@ a {
 .widget_search .search-submit {
   display: none; }
 
+.btOpenSidebar {
+  padding: 10px;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer; }
+
+.widget-area {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1000; }
+  .widget-area .wrapper {
+    display: block;
+    height: 100%;
+    overflow-y: scroll;
+    max-width: 300px;
+    background-color: #3f51b5; }
+  .widget-area .widget {
+    color: #fff; }
+    .widget-area .widget a {
+      color: inherit;
+      text-decoration: none; }
+    .widget-area .widget a:hover {
+      color: #ff4081; }
+    .widget-area .widget h1 {
+      font-size: large;
+      margin: 10px 0px;
+      padding: 10px 15px;
+      border-bottom: solid 1px #fff; }
+    .widget-area .widget form {
+      padding: 10px; }
+    .widget-area .widget form input {
+      width: 90%;
+      font-size: medium;
+      padding: 10px 5%; }
+  .widget-area .sidebartitle {
+    color: #fff;
+    padding: 20px 0px;
+    border-bottom: solid 1px white;
+    margin-bottom: 30px;
+    display: flex; }
+    .widget-area .sidebartitle h1 {
+      font-size: x-large;
+      margin: 0px;
+      padding: 0px;
+      text-align: center; }
+    .widget-area .sidebartitle .btClose {
+      min-width: 40px;
+      max-width: 40px;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer; }
+  .widget-area.hidden {
+    display: none; }
+
 body.custom-background {
   background-image: none !important; }
 
@@ -563,29 +623,56 @@ body.custom-background {
     .site-header .main-navigation {
       position: absolute;
       top: 20px;
+      margin-left: 20px;
       right: 20px;
       width: initial; }
-    .site-header .main-navigation .menu {
+    .site-header .main-navigation > div {
       display: table; }
-      .site-header .main-navigation .menu ul {
+      .site-header .main-navigation > div ul {
         padding: 0px;
         margin: 0px; }
-        .site-header .main-navigation .menu ul li {
+        .site-header .main-navigation > div ul li {
           color: #fff;
           padding: 8px 12px;
           border-radius: 2px;
           display: block;
           float: left;
           font-size: small; }
-          .site-header .main-navigation .menu ul li:hover {
+          .site-header .main-navigation > div ul li:hover {
             background-color: #ff4081; }
-          .site-header .main-navigation .menu ul li a {
+          .site-header .main-navigation > div ul li a {
             color: inherit;
             text-decoration: none; }
-          .site-header .main-navigation .menu ul li.page_item_has_children {
+          .site-header .main-navigation > div ul li.page_item_has_children {
             position: relative; }
-            .site-header .main-navigation .menu ul li.page_item_has_children ul.children {
+            .site-header .main-navigation > div ul li.page_item_has_children ul.children {
               background-color: #303f9f; }
+  .site-footer {
+    padding: 10px;
+    background-color: #3f51b5; }
+    .site-footer .site-info {
+      width: 600px;
+      margin: 0px auto;
+      color: #fff;
+      font-size: small;
+      text-align: center; }
+    .site-footer a {
+      font-style: italic;
+      color: inherit;
+      text-decoration: none; }
+  .site .posts-navigation .nav-links > div a {
+    color: #ff4081;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px; }
+    .site .posts-navigation .nav-links > div a i {
+      margin: 3px 5px;
+      text-align: center; }
+    .site .posts-navigation .nav-links > div a:hover {
+      background-color: #ff4081;
+      color: white;
+      box-shadow: 1px 1px 3px -1px #333; }
 
 .sticky {
   display: block; }
@@ -630,22 +717,22 @@ article {
     article .entry-header .entry-meta {
       font-style: italic;
       font-size: small; }
-  article .entry-content {
+  article .entry-content, article .entry-summary {
     padding: 20px;
     margin-top: 0px; }
-    article .entry-content p {
+    article .entry-content p, article .entry-summary p {
       line-height: 2; }
-    article .entry-content figure.alignnone {
+    article .entry-content figure.alignnone, article .entry-summary figure.alignnone {
       margin: 0px; }
-    article .entry-content figure.alignleft {
+    article .entry-content figure.alignleft, article .entry-summary figure.alignleft {
       margin: 10px 20px 10px 0px; }
-    article .entry-content figure.alignright {
+    article .entry-content figure.alignright, article .entry-summary figure.alignright {
       margin: 10px 0px 10px 20px; }
-    article .entry-content .more-link {
+    article .entry-content .more-link, article .entry-summary .more-link {
       display: table;
       padding: 5px 10px;
       border-radius: 10px; }
-    article .entry-content .more-link:hover {
+    article .entry-content .more-link:hover, article .entry-summary .more-link:hover {
       background-color: #ff4081;
       color: white; }
   article .entry-footer {
@@ -663,10 +750,10 @@ article {
       display: none;
       color: inherit;
       text-decoration: none; }
-      article .entry-footer .cat-links a:nth-child(1), article .entry-footer .cat-links a:nth-child(2) {
-        display: initial; }
-      article .entry-footer .cat-links a:hover {
-        color: #ff4081; }
+    article .entry-footer .cat-links a:nth-child(1), article .entry-footer .cat-links a:nth-child(2) {
+      display: initial; }
+    article .entry-footer .cat-links a:hover {
+      color: #ff4081; }
     article .entry-footer .comments-link, article .entry-footer .edit-link {
       float: right; }
     article .entry-footer .comments-link a, article .entry-footer .edit-link a {
@@ -674,10 +761,10 @@ article {
       padding: 10px;
       color: white;
       background-color: #303f9f; }
-      article .entry-footer .comments-link a i, article .entry-footer .edit-link a i {
-        line-height: inherit; }
-      article .entry-footer .comments-link a:hover, article .entry-footer .edit-link a:hover {
-        background-color: #3f51b5; }
+    article .entry-footer .comments-link a i, article .entry-footer .edit-link a i {
+      line-height: inherit; }
+    article .entry-footer .comments-link a:hover, article .entry-footer .edit-link a:hover {
+      background-color: #3f51b5; }
   article .page-links {
     padding: 5px 10px;
     border-top: solid 1px #ccc;

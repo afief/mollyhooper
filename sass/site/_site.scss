@@ -53,9 +53,10 @@ body.custom-background {
 		.main-navigation {
 			position: absolute;
 			top: 20px;
+			margin-left: 20px;
 			right: 20px;
 			width: initial;
-			.menu {
+			> div {
 				display: table;
 				ul {
 					padding: 0px;
@@ -80,6 +81,44 @@ body.custom-background {
 								background-color: $color__indigo700;
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+	&-footer {
+		padding: 10px;
+		background-color: $color__indigo;
+		.site-info {
+			width: $size__site-desktop;
+			margin: 0px auto;
+			color: $color__white;
+			font-size: small;
+			text-align: center;
+		}
+		a {
+			font-style: italic;
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+	.posts-navigation {
+		.nav-links {
+			> div {
+				a {
+					color: $color__pink;
+					text-decoration: none;
+					display: inline-block;
+					padding: 8px 10px;
+					border-radius: 3px;
+					i {
+						margin: 3px 5px;
+						text-align: center;
+					}
+					&:hover {
+						background-color: $color__pink;
+						color: white;
+						box-shadow: 1px 1px 3px -1px $color__boxshadow;
 					}
 				}
 			}

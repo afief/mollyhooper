@@ -11,3 +11,77 @@
 .widget_search .search-submit {
 	display: none;
 }
+
+.btOpenSidebar {
+	padding: 10px;
+	color: $color__white;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+.widget-area {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.3);
+	z-index: 1000;
+	.wrapper {
+		display: block;
+		height: 100%;
+		overflow-y: scroll;
+		max-width: 300px;
+		background-color: $color__indigo;
+	}
+
+	.widget {
+		a {
+			color: inherit;
+			text-decoration: none;
+			&:hover {
+				color: $color__pink;
+			}
+		}
+		color: $color__white;
+		h1 {
+			font-size: large;
+			margin: 10px 0px;
+			padding: 10px 15px;
+			border-bottom: solid 1px $color__white;
+		}
+		form {
+			padding: 10px;
+			input {
+				width: 90%;
+				font-size: medium;
+				padding: 10px 5%;
+			}
+		}
+	}
+
+	.sidebartitle {
+		color: $color__white;
+		padding: 20px 0px;
+		border-bottom: solid 1px white;
+  		margin-bottom: 30px;
+  		display: flex;
+  		h1 {
+  			font-size: x-large;
+  			margin: 0px;
+  			padding: 0px;
+  			text-align: center;
+  		}
+  		.btClose {
+  			min-width: 40px;
+  			max-width: 40px;
+  			text-align: center;
+  			padding: 10px;
+  			cursor: pointer;
+  		}
+	}
+	&.hidden {
+		display: none;
+	}
+}

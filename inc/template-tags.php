@@ -7,13 +7,14 @@
  * @package MollyHooper
  */
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
+if ( ! function_exists( 'mollyhooper_posts_navigation' ) ) :
+
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @todo Remove this function when WordPress 4.3 is released.
  */
-function the_posts_navigation() {
+function mollyhooper_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -24,11 +25,11 @@ function the_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'mollyhooper' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<i class="genericon genericon-leftarrow"></i> Older posts', 'mollyhooper' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mollyhooper' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="genericon genericon-rightarrow"></i>', 'mollyhooper' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -110,25 +111,25 @@ if ( ! function_exists( 'mollyhooper_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function mollyhooper_entry_footer() {
-	// Hide category and tag text for pages.
+function mollyhooper_entry_cattags() {
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		// $categories_list = get_the_category_list( __( ', ', 'mollyhooper' ) );
-		// if ( $categories_list && mollyhooper_categorized_blog() ) {
-		// 	printf( '<span class="cat-links">' . __( '%1$s', 'mollyhooper' ) . '</span>', $categories_list );
-		// }
+		$categories_list = get_the_category_list( __( ', ', 'mollyhooper' ) );
+		if ( $categories_list && mollyhooper_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( '%1$s', 'mollyhooper' ) . '</span>', $categories_list );
+		}
 
 		/* translators: used between list items, there is a space after the comma */
-		// $tags_list = get_the_tag_list( '', __( ', ', 'mollyhooper' ) );
-		// if ( $tags_list ) {
-		// 	printf( '<span class="tags-links">' . __( '%1$s', 'mollyhooper' ) . '</span>', $tags_list );
-		// }
+		$tags_list = get_the_tag_list( '', __( ', ', 'mollyhooper' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( '%1$s', 'mollyhooper' ) . '</span>', $tags_list );
+		}
 	}
-
+}
+function mollyhooper_entry_footer() {
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( '<i class="genericon genericon-reply"></i>', 'mollyhooper' ), __( '1 Comment', 'mollyhooper' ), __( '% Comments', 'mollyhooper' ) );
+		comments_popup_link( __( '<i class="genericon genericon-reply-single"></i>', 'mollyhooper' ), __( '<i class="genericon genericon-reply-single"></i> 1 Comment', 'mollyhooper' ), __( '<i class="genericon genericon-reply-single"></i> % Comments', 'mollyhooper' ) );
 		echo '</span>';
 	}
 

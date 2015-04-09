@@ -5,6 +5,17 @@
  */
 ( function() {
 	var container, button, menu;
+	var btCloseSidebar = document.querySelector("#btCloseSidebar");
+	var btOpenSidebar = document.querySelector("#btOpenSidebar");
+	var sidebar = document.querySelector("#secondary");
+
+	btCloseSidebar.addEventListener("click", function() {
+		console.log("hide sidebar");
+		sidebar.className += " hidden";//container.className.replace(" hidden", "");
+	});
+	btOpenSidebar.addEventListener("click", function() {
+		sidebar.className = sidebar.className.replace(" hidden", "");
+	});
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {

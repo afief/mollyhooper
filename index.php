@@ -31,8 +31,8 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
-
+			<?php mollyhooper_posts_navigation(); ?>
+			
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
